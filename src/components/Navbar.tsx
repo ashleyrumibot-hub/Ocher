@@ -31,7 +31,7 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <img src="/ocher-full.png" alt="Ocher" className="h-8 transition-transform group-hover:scale-105 brightness-0 invert" />
+          <img src="/ocher-full.png" alt="Ocher" className="h-10 transition-transform group-hover:scale-105 brightness-0 invert" />
         </Link>
 
         {/* Desktop */}
