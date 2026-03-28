@@ -13,15 +13,15 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "opencrate",
-    name: "OpenCrate",
-    emoji: "\uD83D\uDCE6",
+    name: "openCrate",
+    emoji: "\uD83C\uDFB6",
     icon: "/opencrate-icon.svg",
-    tagline: "Community-driven open source discovery",
+    tagline: "AI-powered live DJ platform in your browser",
     description:
-      "OpenCrate is a curated platform for discovering, sharing, and collaborating on open source projects. Built to surface high-quality tools and foster meaningful connections between developers and maintainers.",
+      "The world's first browser-based, zero-install DJ console built for the AI music era. Load tracks from Suno, SoundCloud, or Spotify \u2014 then mix them live with dual decks, real-time effects, 3-band EQ, auto-BPM sync, one-touch transitions, a 16-pad SFX bank, and a full effects rack. No downloads, no hardware, no experience required. Open the URL and you're on the decks.",
     url: "https://opencrate.club",
     status: "live",
-    tags: ["Open Source", "Community", "Discovery"],
+    tags: ["AI Music", "DJ Platform", "Web Audio"],
   },
   {
     slug: "project-atlas",
