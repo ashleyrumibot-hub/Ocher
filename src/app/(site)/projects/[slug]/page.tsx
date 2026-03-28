@@ -73,7 +73,7 @@ export default async function ProjectPage({
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-gradient-to-r from-ocher to-ocher-dark text-white font-medium hover:shadow-[0_0_30px_rgba(204,119,34,0.3)] transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-gradient-to-r from-ocher to-ocher-dark text-white font-medium hover:shadow-[0_0_30px_rgba(18,80,243,0.3)] transition-all duration-300 hover:scale-105"
           >
             Visit {project.name}
             <ExternalLink size={16} />

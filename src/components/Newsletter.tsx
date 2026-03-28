@@ -98,7 +98,7 @@ export function Newsletter() {
             <button
               type="submit"
               disabled={status === "loading" || status === "success"}
-              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-ocher to-ocher-dark text-white font-medium hover:shadow-[0_0_30px_rgba(204,119,34,0.3)] transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-2"
+              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-ocher to-ocher-dark text-white font-medium hover:shadow-[0_0_30px_rgba(18,80,243,0.3)] transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-2"
             >
               {status === "loading" && <Loader2 size={18} className="animate-spin" />}
               {status === "success" && <Check size={18} />}

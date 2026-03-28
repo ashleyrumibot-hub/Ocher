@@ -27,8 +27,12 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ocher/20 to-ocher/5 flex items-center justify-center border border-ocher/10">
-            <span className="text-2xl leading-none">{project.emoji}</span>
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ocher/20 to-ocher/5 flex items-center justify-center border border-ocher/10 overflow-hidden">
+            {project.icon ? (
+              <img src={project.icon} alt="" className="w-8 h-8 rounded-md" />
+            ) : (
+              <span className="text-2xl leading-none">{project.emoji}</span>
+            )}
           </div>
           <span
             className={`text-xs px-2.5 py-1 rounded-full border ${statusColors[project.status]}`}

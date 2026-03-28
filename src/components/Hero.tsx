@@ -92,7 +92,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-surface via-surface to-surface-elevated" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-ocher/5 blur-[120px] animate-glow-pulse" />
@@ -139,7 +139,7 @@ export function Hero() {
         >
           <a
             href="#projects"
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-ocher to-ocher-dark text-white font-medium hover:shadow-[0_0_30px_rgba(204,119,34,0.3)] transition-all duration-300 hover:scale-105"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-ocher to-ocher-dark text-white font-medium hover:shadow-[0_0_30px_rgba(18,80,243,0.3)] transition-all duration-300 hover:scale-105"
           >
             Explore Projects
           </a>

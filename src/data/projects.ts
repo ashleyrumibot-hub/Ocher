@@ -2,6 +2,7 @@ export interface Project {
   slug: string;
   name: string;
   emoji: string;
+  icon?: string;
   tagline: string;
   description: string;
   url: string;
@@ -14,6 +15,7 @@ export const projects: Project[] = [
     slug: "opencrate",
     name: "OpenCrate",
     emoji: "\uD83D\uDCE6",
+    icon: "/opencrate-icon.svg",
     tagline: "Community-driven open source discovery",
     description:
       "OpenCrate is a curated platform for discovering, sharing, and collaborating on open source projects. Built to surface high-quality tools and foster meaningful connections between developers and maintainers.",
