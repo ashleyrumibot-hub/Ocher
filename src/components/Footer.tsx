@@ -5,11 +5,9 @@ export function Footer() {
     <footer className="border-t border-border bg-surface py-12 px-6">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <img src="/ocher-full-cropped.svg" alt="Ocher" className="h-6 brightness-0 invert opacity-60" />
-            <span className="text-text-secondary text-sm">
-              Ocher &copy; {new Date().getFullYear()}
-            </span>
+            <span className="text-text-muted text-sm">&copy; {new Date().getFullYear()}</span>
           </div>
 
           <div className="flex items-center gap-6 text-sm text-text-muted">
