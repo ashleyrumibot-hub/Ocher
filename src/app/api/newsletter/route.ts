@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -11,37 +14,25 @@ export async function POST(request: Request) {
       );
     }
 
-    // If Resend API key is configured, use it
-    const resendKey = process.env.RESEND_API_KEY;
-    if (resendKey && resendKey !== "your-resend-api-key") {
-      const res = await fetch("https://api.resend.com/contacts", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${resendKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          unsubscribed: false,
-          audience_id: process.env.RESEND_AUDIENCE_ID,
-        }),
-      });
+    // Notify Boz of new subscriber
+    await resend.emails.send({
+      from: "Ocher <onboarding@resend.dev>",
+      to: "boz@ocher.ai",
+      subject: "New Newsletter Subscriber",
+      html: `<p>New subscriber: <strong>${email}</strong></p><p>Subscribed at ${new Date().toISOString()}</p>`,
+    });
 
-      if (!res.ok) {
-        const data = await res.json();
-        console.error("Resend error:", data);
-        return NextResponse.json(
-          { error: "Failed to subscribe. Please try again." },
-          { status: 500 }
-        );
-      }
-    } else {
-      // Log for development — in production, configure Resend
-      console.log(`[Newsletter] New subscriber: ${email}`);
-    }
+    // Send welcome email to subscriber
+    await resend.emails.send({
+      from: "Ocher <onboarding@resend.dev>",
+      to: email,
+      subject: "Welcome to Ocher",
+      html: `<p>Thanks for subscribing to Ocher.</p><p>You'll receive updates on our latest ventures, events, and opportunities.</p><p>— Boz Zou & the Ocher team</p>`,
+    });
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    console.error("Newsletter error:", err);
     return NextResponse.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }
