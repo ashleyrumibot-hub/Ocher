@@ -20,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group relative block rounded-2xl bg-surface-card border border-border p-6 hover:border-ocher/30 hover:bg-surface-hover transition-all duration-500 hover:shadow-[0_0_40px_rgba(204,119,34,0.08)]"
+      className="group relative block rounded-2xl bg-surface-card border border-border p-6 hover:border-ocher/30 hover:bg-surface-hover transition-all duration-500 hover:shadow-[0_0_40px_rgba(18,80,243,0.1)]"
     >
       {/* Glow effect on hover */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-ocher/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -28,9 +28,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-ocher/20 to-ocher/5 flex items-center justify-center border border-ocher/10">
-            <span className="text-ocher font-bold text-lg">
-              {project.name[0]}
-            </span>
+            <span className="text-2xl leading-none">{project.emoji}</span>
           </div>
           <span
             className={`text-xs px-2.5 py-1 rounded-full border ${statusColors[project.status]}`}

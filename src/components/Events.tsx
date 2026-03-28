@@ -11,6 +11,13 @@ const typeStyles = {
   talk: "bg-ocher/20 text-ocher-light",
 };
 
+const typeEmojis = {
+  meetup: "\uD83E\uDD1D",
+  workshop: "\uD83D\uDEE0\uFE0F",
+  hackathon: "\u26A1",
+  talk: "\uD83C\uDF99\uFE0F",
+};
+
 function formatDate(dateStr: string) {
   return new Date(dateStr + "T00:00:00").toLocaleDateString("en-US", {
     month: "long",
@@ -91,7 +98,7 @@ export function Events() {
                     <span
                       className={`text-xs px-2 py-0.5 rounded-full ${typeStyles[event.type]}`}
                     >
-                      {event.type}
+                      {typeEmojis[event.type]} {event.type}
                     </span>
                   </div>
                   <div className="flex items-center gap-4 text-text-muted text-sm">
