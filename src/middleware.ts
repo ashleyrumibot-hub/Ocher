@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 const SITE_PASSWORD = process.env.SITE_PASSWORD || "Cp9aPaxTVc-LiGQHepF";
 
-const PUBLIC_PATHS = ["/password", "/api/password", "/logo.svg", "/favicon.svg"];
+const PUBLIC_PATHS = ["/password", "/api/password", "/ocher-icon.png", "/ocher-full.png", "/ocher-icon.svg", "/ocher-full.svg"];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

@@ -34,7 +34,7 @@ export default function PasswordPage() {
     <div className="min-h-screen flex items-center justify-center px-6 bg-surface">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/logo.svg" alt="Ocher" className="w-14 h-14 mx-auto mb-4" />
+          <img src="/ocher-icon.png" alt="Ocher" className="w-14 h-14 mx-auto mb-4 brightness-0 invert" />
           <h1 className="text-2xl font-bold tracking-tight mb-2 text-text-primary">
             Ocher
           </h1>

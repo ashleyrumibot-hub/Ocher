@@ -13,7 +13,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/logo.svg" alt="Ocher" className="w-14 h-14 mb-4 mx-auto" />
+          <img src="/ocher-icon.png" alt="Ocher" className="w-14 h-14 mb-4 mx-auto brightness-0 invert" />
           <h1 className="text-2xl font-bold tracking-tight mb-2">
             Dev Portal
           </h1>

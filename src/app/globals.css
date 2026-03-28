@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ocher: #787FF6;
-  --color-ocher-light: #9BA0FF;
-  --color-ocher-dark: #303596;
-  --color-ocher-glow: #787FF640;
+  --color-ocher: #1250F3;
+  --color-ocher-light: #4A7AFF;
+  --color-ocher-dark: #0D3AB8;
+  --color-ocher-glow: #1250F340;
   --color-accent-warm: #F1DFD2;
   --color-accent-lavender: #DCD2F1;
   --color-surface: #0B0B12;

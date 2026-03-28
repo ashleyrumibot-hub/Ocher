@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Ocher is an AI venture studio and incubator building the future of intelligent systems. Founded by Boz Zou.",
   keywords: ["AI", "venture studio", "incubator", "artificial intelligence", "Boz Zou", "Ocher"],
   icons: {
-    icon: "/favicon.svg",
+    icon: "/ocher-icon.png",
   },
   openGraph: {
     title: "Ocher — AI Venture Studio",

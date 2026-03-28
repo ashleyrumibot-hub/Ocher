@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <img src="/logo.svg" alt="Ocher" className="w-7 h-7" />
+            <img src="/ocher-icon.png" alt="Ocher" className="h-6 brightness-0 invert" />
             <span className="text-text-secondary text-sm">
               Ocher &copy; {new Date().getFullYear()}
             </span>
