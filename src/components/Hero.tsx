@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useParallax } from "@/hooks/useParallax";
 
 // Morphing blob shapes that react to mouse
 function InteractiveCanvas() {
@@ -219,6 +220,13 @@ export function Hero() {
   const [visible, setVisible] = useState(false);
   const [textRevealed, setTextRevealed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const scrollY = useParallax();
+
+  // Parallax values
+  const contentY = scrollY * 0.4;
+  const contentOpacity = Math.max(0, 1 - scrollY / 600);
+  const gridY = scrollY * 0.15;
+  const shapesY = scrollY * 0.25;
 
   useEffect(() => {
     const timer1 = setTimeout(() => setVisible(true), 100);
@@ -237,26 +245,35 @@ export function Hero() {
       {/* Deep dark gradient base */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#0d1030_0%,#0B0B12_70%)]" />
 
-      {/* Subtle grid pattern */}
+      {/* Subtle grid pattern — slow parallax */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `linear-gradient(rgba(120,160,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(120,160,255,0.3) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
+          transform: `translateY(${gridY}px)`,
         }}
       />
 
       {/* Interactive canvas with morphing orbs */}
       <InteractiveCanvas />
 
-      {/* Floating geometric elements */}
-      <FloatingShapes />
+      {/* Floating geometric elements — medium parallax */}
+      <div style={{ transform: `translateY(${shapesY}px)` }}>
+        <FloatingShapes />
+      </div>
 
       {/* Noise grain overlay */}
       <div className="absolute inset-0 grain-overlay opacity-40 pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      {/* Content — parallax drift up + fade on scroll */}
+      <div
+        className="relative z-10 text-center px-6 max-w-5xl mx-auto"
+        style={{
+          transform: `translateY(-${contentY}px)`,
+          opacity: contentOpacity,
+        }}
+      >
         {/* Badge */}
         <div
           className={`transition-all duration-1000 ease-out ${

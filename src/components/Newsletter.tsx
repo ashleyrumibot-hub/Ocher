@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Mail, ArrowRight, Check, Loader2 } from "lucide-react";
+import { useElementScroll } from "@/hooks/useParallax";
 
 export function Newsletter() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const { ref: parallaxRef, progress } = useElementScroll();
+  const decorY1 = (progress - 0.5) * -80;
+  const decorY2 = (progress - 0.5) * 60;
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -50,11 +54,27 @@ export function Newsletter() {
 
   return (
     <section
-      ref={sectionRef}
-      className="relative py-32 px-6 bg-surface-elevated overflow-hidden"
+      ref={(el) => {
+        (sectionRef as React.MutableRefObject<HTMLElement | null>).current = el;
+        (parallaxRef as React.MutableRefObject<HTMLElement | null>).current = el;
+      }}
+      className="relative py-32 md:py-40 px-6 bg-surface-elevated overflow-hidden"
     >
-      {/* Decorative glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-ocher/5 rounded-full blur-[100px]" />
+      {/* Parallax decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-ocher/5 rounded-full blur-[100px]"
+          style={{ transform: `translate(-50%, ${decorY1}px)` }}
+        />
+        <div
+          className="absolute -right-10 top-1/3 w-[250px] h-[250px] rounded-full border border-ocher/[0.04]"
+          style={{ transform: `translateY(${decorY2}px)` }}
+        />
+        <div
+          className="absolute left-[10%] bottom-[20%] w-1.5 h-1.5 bg-ocher/15 rounded-full"
+          style={{ transform: `translateY(${decorY1 * 0.7}px)` }}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-2xl text-center">
         <div

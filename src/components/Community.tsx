@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Send, Users } from "lucide-react";
+import { useElementScroll } from "@/hooks/useParallax";
 
 const communities = [
   {
@@ -29,6 +30,11 @@ const communities = [
 export function Community() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const { ref: parallaxRef, progress } = useElementScroll();
+
+  const decorY1 = (progress - 0.5) * -110;
+  const decorY2 = (progress - 0.5) * 90;
+  const decorRotate = progress * 50;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,8 +48,31 @@ export function Community() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="community" className="relative py-32 px-6">
-      <div className="mx-auto max-w-4xl">
+    <section
+      ref={(el) => {
+        (sectionRef as React.MutableRefObject<HTMLElement | null>).current = el;
+        (parallaxRef as React.MutableRefObject<HTMLElement | null>).current = el;
+      }}
+      id="community"
+      className="relative py-32 md:py-40 px-6 overflow-hidden"
+    >
+      {/* Parallax decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute -right-16 top-[20%] w-[300px] h-[300px] rounded-full border border-ocher/[0.05]"
+          style={{ transform: `translateY(${decorY1}px) rotate(${decorRotate}deg)` }}
+        />
+        <div
+          className="absolute left-0 top-1/2 w-[500px] h-[500px] rounded-full bg-indigo-500/[0.02] blur-[120px]"
+          style={{ transform: `translateY(${decorY2}px)` }}
+        />
+        <div
+          className="absolute right-[20%] bottom-[15%] w-3 h-3 border border-ocher/10 rotate-45"
+          style={{ transform: `translateY(${decorY1 * 0.5}px) rotate(${45 + decorRotate}deg)` }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-4xl">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"

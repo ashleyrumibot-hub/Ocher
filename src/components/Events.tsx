@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { events } from "@/data/events";
+import { useElementScroll } from "@/hooks/useParallax";
 
 const typeStyles = {
   meetup: "bg-violet-500/20 text-violet-400",
@@ -29,6 +30,10 @@ function formatDate(dateStr: string) {
 export function Events() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const { ref: parallaxRef, progress } = useElementScroll();
+
+  const decorY1 = (progress - 0.5) * -90;
+  const decorY2 = (progress - 0.5) * 130;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,11 +48,30 @@ export function Events() {
 
   return (
     <section
-      ref={sectionRef}
+      ref={(el) => {
+        (sectionRef as React.MutableRefObject<HTMLElement | null>).current = el;
+        (parallaxRef as React.MutableRefObject<HTMLElement | null>).current = el;
+      }}
       id="events"
-      className="relative py-32 px-6 bg-surface-elevated"
+      className="relative py-32 md:py-40 px-6 bg-surface-elevated overflow-hidden"
     >
-      <div className="mx-auto max-w-5xl">
+      {/* Parallax decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute -left-20 top-1/3 w-[350px] h-[350px] rounded-full border border-ocher/[0.04]"
+          style={{ transform: `translateY(${decorY1}px)` }}
+        />
+        <div
+          className="absolute right-[10%] top-[20%] w-2 h-2 bg-ocher/15 rounded-full"
+          style={{ transform: `translateY(${decorY2 * 0.6}px)` }}
+        />
+        <div
+          className="absolute right-0 bottom-1/4 w-[400px] h-[400px] rounded-full bg-ocher/[0.02] blur-[100px]"
+          style={{ transform: `translateY(${decorY2}px)` }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-5xl">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
