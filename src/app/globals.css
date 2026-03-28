@@ -66,6 +66,21 @@ body {
   90% { transform: translate(-10%, 10%); }
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
