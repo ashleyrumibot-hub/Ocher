@@ -8,7 +8,24 @@
       "Bash(npm init:*)",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(node -e \"const m = require\\(''lucide-react''\\); const g = Object.keys\\(m\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''git''\\)\\); console.log\\(g\\);\")"
+      "Bash(node -e \"const m = require\\(''lucide-react''\\); const g = Object.keys\\(m\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''git''\\)\\); console.log\\(g\\);\")",
+      "WebFetch(domain:ocher.ai)",
+      "Bash(gh repo:*)",
+      "Bash(mkdir -p \"\\(site\\)\")",
+      "Bash(mv page.tsx \"\\(site\\)/\")",
+      "Bash(mv projects:*)",
+      "Bash(mv events:*)",
+      "Bash(mv dev:*)",
+      "Bash(cp logos/ocher_full_logo.png public/ocher-full.png)",
+      "Bash(cp logos/ocher_graphic_logo.png public/ocher-icon.png)",
+      "Bash(cp logos/ocher_graphic_logo.svg public/ocher-icon.svg)",
+      "Bash(cp logos/ocher_full_logo.svg public/ocher-full.svg)",
+      "WebFetch(domain:opencrate.club)",
+      "Bash(curl -sL \"https://opencrate.club/icon.svg\" -o public/opencrate-icon.svg)",
+      "Bash(node -e \":*)",
+      "WebFetch(domain:tendril.studio)",
+      "Bash(rm src/middleware.ts src/app/api/password/route.ts src/app/password/page.tsx)",
+      "Bash(rmdir src/app/api/password src/app/password)"
     ]
   }
 }
