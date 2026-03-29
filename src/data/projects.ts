@@ -24,15 +24,16 @@ export const projects: Project[] = [
     tags: ["AI Music", "DJ Platform", "Web Audio"],
   },
   {
-    slug: "project-atlas",
-    name: "Project Atlas",
-    emoji: "\uD83C\uDF10",
-    tagline: "AI-powered knowledge mapping",
+    slug: "camden",
+    name: "camden.",
+    emoji: "\uD83C\uDFB5",
+    icon: "/camden-icon.svg",
+    tagline: "Where AI music comes alive",
     description:
-      "An intelligent system that maps the relationships between ideas, research, and data \u2014 transforming unstructured information into navigable knowledge graphs.",
-    url: "#",
+      "The world\u2019s first browser-based AI live music ecosystem. camden. combines generative AI music creation with professional DJ performance tools \u2014 go from prompt to performance in minutes. Zero install, zero hardware, zero learning curve. Not a tool. A venue.",
+    url: "https://camden.live",
     status: "coming-soon",
-    tags: ["AI", "Knowledge Graph", "Research"],
+    tags: ["AI Music", "Live Performance", "Creator Economy"],
   },
   {
     slug: "project-sentinel",
