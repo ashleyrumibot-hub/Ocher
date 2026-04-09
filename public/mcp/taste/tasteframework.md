@@ -180,7 +180,7 @@ Phase 2 was "what's there". Phase 3 is "what does it mean, why does it work, who
 
 ### Layer 1 — Denotation / Pre-Iconographic
 
-The literal sign. *"A black square in the top-left corner containing the letters STEVEN HANLEY in JetBrains Mono."* This is just Phase 2 observations re-stated as descriptive sentences.
+The literal sign. *"A black square in the top-left corner containing a wordmark in 12px uppercase monospace, pure black on pure white."* This is just Phase 2 observations re-stated as descriptive sentences.
 
 ### Layer 2 — Connotation / Iconographic
 
@@ -443,7 +443,7 @@ PHASE 8 — CRITIQUE
 
 ## When to use this framework
 
-- Decoding a designer's body of work (e.g. Steven Hanley, Massimo Vignelli, Paula Scher)
+- Decoding a designer's body of work (e.g. Massimo Vignelli, Paula Scher, Stefan Sagmeister)
 - Decoding a brand campaign (e.g. Off-White, A24, Aesop)
 - Decoding a moodboard for a new project before execution
 - Decoding a competitor before a pitch
