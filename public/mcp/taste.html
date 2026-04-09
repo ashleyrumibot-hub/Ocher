@@ -274,6 +274,77 @@
   @media (max-width: 860px) { .atoms { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px) { .atoms { grid-template-columns: 1fr; } }
 
+  /* download card */
+  .dl-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+    border: 2px solid var(--ink);
+    background: var(--paper-2);
+    padding: 28px 32px;
+    margin: 32px 0 16px;
+    max-width: 900px;
+  }
+  .dl-card .text h4 {
+    font-family: "Fraunces", serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 6px;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 48;
+  }
+  .dl-card .text h4 em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .dl-card .text p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--mute);
+    max-width: 56ch;
+  }
+  .dl-card .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 22px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 2px solid var(--ink);
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .dl-card .btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+  .dl-card .btn .arr { font-size: 14px; }
+  .dl-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--mute);
+    margin-top: 10px;
+  }
+  .dl-meta code {
+    background: var(--paper);
+    border: 1px solid var(--hair);
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+  @media (max-width: 680px) {
+    .dl-card { grid-template-columns: 1fr; }
+  }
+
   /* footer */
   footer.bot {
     margin-top: 120px;
@@ -696,6 +767,25 @@ PHASE 8 — CRITIQUE
   <li><strong>Sontag, Susan.</strong> <em>Notes on "Camp"</em> (1964) — on writing about taste as a sensibility.</li>
   <li><strong>Vignelli, Massimo.</strong> <em>The Vignelli Canon</em> — disciplined typographic thinking.</li>
 </ul>
+
+<!-- =============== DOWNLOAD =============== -->
+<div class="sec-head">
+  <div class="idx">[14] · DOWNLOAD</div>
+  <div class="ttl">Feed it to <em>a model</em>.</div>
+</div>
+
+<p>The entire framework is available as a single Markdown file. Download it, drop it into your AI workflow as a Claude Skill, MCP resource, system prompt, or context attachment — and the taste becomes a capability your tools just <em>have</em>.</p>
+
+<div class="dl-card">
+  <div class="text">
+    <h4>tasteframework<em>.md</em></h4>
+    <p>The full framework — theory, the 12 atoms, the 3 decode layers, the phase-by-phase drills, and the copy-paste template skeleton. One file, zero dependencies.</p>
+    <div class="dl-meta">~38 KB · MARKDOWN · <code>https://ocher.ai/mcp/taste/tasteframework.md</code></div>
+  </div>
+  <a class="btn" href="/mcp/taste/tasteframework.md" download="tasteframework.md">
+    <span>DOWNLOAD .MD</span><span class="arr">↓</span>
+  </a>
+</div>
 
 <hr class="rule">
 <p style="margin-top:24px; font-style:italic; color:var(--mute); font-size:15px; max-width:60ch;">A framework is not a substitute for taste. It is the scaffolding that lets taste become portable — transferable from the person who made it to the person who wants to learn it, and then onward into new work.</p>
