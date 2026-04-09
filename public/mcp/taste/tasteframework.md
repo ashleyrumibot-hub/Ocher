@@ -180,7 +180,7 @@ Phase 2 was "what's there". Phase 3 is "what does it mean, why does it work, who
 
 ### Layer 1 — Denotation / Pre-Iconographic
 
-The literal sign. *"A black square in the top-left corner containing a wordmark in 12px uppercase monospace, pure black on pure white."* This is just Phase 2 observations re-stated as descriptive sentences.
+The literal sign. Plain description without interpretation — *"there is a rectangle, inside the rectangle is a wordmark in uppercase, the background is off-white."* This is Phase 2 observations re-stated as sentences.
 
 ### Layer 2 — Connotation / Iconographic
 
